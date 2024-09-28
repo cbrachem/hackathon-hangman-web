@@ -1,0 +1,63 @@
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.hangman {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+
+    .time-left {
+      visibility: hidden;
+    }
+  }
+}
+
+.alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  max-width: 30em;
+  justify-content: center;
+
+  button {
+    width: 3em;
+    text-align: center;
+  }
+}
+
+.finished .word {
+  color: #0c0;
+}
+
+.word {
+  font-size: 2em;
+  margin: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  &::before,
+  &::after {
+    content: "___";
+    font-size: 1.5rem;
+    color: #888;
+  }
+}
+
+.time-left {
+  position: absolute;
+  top: 0.2em;
+  right: 0.2em;
+  font-size: 1.5em;
+  margin: 1em;
+  background-color: #999;
+  border-radius: 0.2em;
+}
